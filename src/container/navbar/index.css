@@ -1,0 +1,21 @@
+.navbar-dashboard{
+    height: 90%;
+    width: 3%;
+    border-radius: 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vw;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap:2vw;
+}
+.nav-icons-center{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    gap:2vw
+}

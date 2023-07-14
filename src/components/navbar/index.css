@@ -1,0 +1,11 @@
+.icon-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 35px;
+    width: 35px;
+    padding: 5px;
+    text-align: center;
+    border-radius:15px;
+    background-color: #69a5fe;
+}

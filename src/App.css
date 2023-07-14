@@ -1,0 +1,19 @@
+.login-form {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+  height: 100%;
+}
+
+.container {
+  width: 40vw;
+  height: 80vh;
+  background-color: black;
+  border-radius: 50px;
+}
+
+.mybutton {
+  display: flex;
+  justify-content: space-evenly;
+}

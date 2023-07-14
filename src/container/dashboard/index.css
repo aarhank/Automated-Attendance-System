@@ -1,0 +1,74 @@
+.dashboard-toggle{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 1vw;
+    height: 50px;
+    width: 350px;
+    margin-top: 1vw;
+    margin-bottom: 2vw;
+}
+
+.dashboard-body{
+    display: flex;
+    flex-direction: row;
+    gap:1vw;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.dashboard-header{
+display: flex;
+    flex-direction: row;
+    gap:2vw;
+    align-items: center;
+    width: 100%;
+    
+}
+
+.create-button{
+    background-color: #69a5fe;
+    display: flex;
+    margin-top: 1vw;
+    margin-bottom: 2vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    border-radius: 1vw;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    height: 50px;
+    width: auto;
+}
+.dashboard-container1{
+    display: flex;
+    flex-direction: row;
+    width: 80vw;
+    max-width: 100%;
+    justify-content: flex-start;
+}   
+.dashboard-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 100%;
+    justify-content: flex-start;
+}  
+
+.qr-body{
+    width: 60%;
+    height: 100%;
+}
+
+.attendance-body{
+    background-color: #ffff;
+    width: 60%;
+    height: 50hv;
+    display: flex;
+    flex-direction: column;
+    gap:2vw;
+    padding: 1vw;
+    border-radius: 1vw;
+}
+

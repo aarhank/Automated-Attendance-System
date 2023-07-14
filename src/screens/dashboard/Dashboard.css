@@ -1,0 +1,42 @@
+.dashboard{
+    height: 100vh;
+
+    max-height: 100%;
+    max-width: 100%;
+    background-color: #f4f6f8;
+    padding: 2vw;
+}
+.dashboard-container{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    height: 93%;
+    width: 100%;
+    border-radius: 1vw;
+}
+
+.main-dashboard{
+    height: 100%;
+    width: 100%;
+    padding-left: 2vw;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap:1vw;
+
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    gap:1vw;
+    width: 100%;
+
+}
+.column{
+    display: flex;
+    flex-direction: column;
+    gap:2vw;
+    
+}

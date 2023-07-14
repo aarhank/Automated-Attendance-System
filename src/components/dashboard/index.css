@@ -1,0 +1,60 @@
+.dashboard-card{
+    display:flex;
+    flex-direction:column;
+    justify-content: flex-start;
+    padding: 1.5vw;
+    overflow-y: scroll;
+    gap:1vw;
+    background-color: #ffff;
+    height: 250px;
+    width: 320px;
+    border-radius: 1vw;
+}
+.card-icon{
+    background-color: blue;
+}
+.upper-body{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.card-button{
+    background-color: #69a5fe;
+    display: flex;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    height: 45px;
+    width: auto;
+}
+.lecture-box{
+    width: 90%;
+    height: auto;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #f4f6f8 ;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.attendance-box{
+    width: auto;
+    height: 20px;
+    padding: 15px;
+    gap:20px;
+    border-radius: 5px;
+    background-color: #f4f6f8 ;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.lecture-box:hover {
+    background-color: #69a5fe;
+    color:white
+}

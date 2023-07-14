@@ -1,0 +1,84 @@
+.QR {
+  text-align: center;
+}
+
+.QR-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .QR-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.QR-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.QR-link {
+  color: #61dafb;
+}
+
+@keyframes QR-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  background-color: white;
+}
+
+#heading{
+  font-size: 3em;
+  font-weight: 900;
+  padding: 0.5em;
+  margin : 0;
+}
+
+#output{
+  display : flex;
+  justify-content: center;
+  margin : 0.5em;
+  padding : 1.5em;
+  
+}
+
+button.button{
+  border-radius: 7%;
+  margin :0;
+  padding : 0;
+}
+
+#gen-button{
+  padding : 0.25em 0.5em;
+  font-size : 1.25em;
+  font-weight: bold;
+}
+
+#QRimg{
+
+}
+
+#roll{
+  display: flex;
+  justify-content: center;
+}
+
+#name{
+  display: flex;
+  justify-content: center;
+}
+  
