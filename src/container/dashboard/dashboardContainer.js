@@ -86,7 +86,7 @@ body: raw,
 redirect: 'follow'
 };
 
-fetch("http://localhost:8086/lecture/generateTokens", requestOptions)
+fetch("https://juit-attendance-acd05c65db38.herokuapp.com/lecture/generateTokens", requestOptions)
 .then(response => response.text())
 .then(async result => {
 
@@ -109,7 +109,7 @@ const refreshAttendance = () => {
     method: 'GET',
     headers: myHeaders,
   };
-  fetch(`http://localhost:8086/attendance/lecture/${lecture}`, requestOptions)
+  fetch(`https://juit-attendance-acd05c65db38.herokuapp.com/attendance/lecture/${lecture}`, requestOptions)
     .then(response => response.text())
     .then(async result => {
       
@@ -126,7 +126,7 @@ const fetchLectures = (data) => {
     method: 'GET',
     headers: myHeaders,
   };
-  fetch(`http://localhost:8086/lecture/subject/${data}`, requestOptions)
+  fetch(`https://juit-attendance-acd05c65db38.herokuapp.com/lecture/subject/${data}`, requestOptions)
     .then(response => response.text())
     .then(async result => {
       
@@ -147,7 +147,7 @@ const fetchLectures = (data) => {
         headers: myHeaders,
       };
            
-      fetch(`http://localhost:8086/subject/teacher/${user.email}`, requestOptions)
+      fetch(`https://juit-attendance-acd05c65db38.herokuapp.com/subject/teacher/${user.email}`, requestOptions)
         .then(response => response.text())
         .then(async result => {
           
@@ -183,7 +183,7 @@ const fetchLectures = (data) => {
         body: payload,
       };
       
-      fetch("http://localhost:8086/subject/create", requestOptions)
+      fetch("https://juit-attendance-acd05c65db38.herokuapp.com/subject/create", requestOptions)
         .then(response => response.text())
         .then(async result => {
           
