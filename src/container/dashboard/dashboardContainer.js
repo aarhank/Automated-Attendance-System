@@ -66,8 +66,10 @@ export default function DashboardContainer() {
   }, [option]);
 
   useEffect(() => {
+    if(subjects == null ){
     fetchSubjects();
     setQrCode(`http://api.qrserver.com/v1/create-qr-code/?data=${word}&size=${size}x${size}&bgcolor=${bgColor}`);
+    }
   }, []);
 
 

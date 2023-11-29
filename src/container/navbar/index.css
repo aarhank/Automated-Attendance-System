@@ -9,12 +9,29 @@
     padding: 2vw;
     background-color: #ffffff;
     display: flex;
+    animation: ease-out 1s;
+    flex-direction: column;
+    gap:2vw;
+}
+.navbar-dashboard:hover{
+    height: 90%;
+    width: 15%;
+    border-radius: 1vw;
+    animation:ease 1s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vw;
+    background-color: #ffffff;
+    display: flex;
     flex-direction: column;
     gap:2vw;
 }
 .nav-icons-center{
     display: flex;
     height: 100%;
+    width: 100%;
     flex-direction: column;
     justify-content: center;
     gap:2vw

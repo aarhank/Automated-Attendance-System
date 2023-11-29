@@ -18,10 +18,16 @@
     flex-direction: row;
     justify-content: space-between;
 }
+.card-button[disabled]
+{
+  pointer-events: none;
+  opacity: 0.7;
+}
 .card-button{
     background-color: #69a5fe;
     display: flex;
     padding-left: 10px;
+    cursor: pointer;
     padding-right: 10px;
     border-radius: 10px;
     flex-direction: column;

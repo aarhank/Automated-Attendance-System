@@ -71,7 +71,9 @@ export default function DashboardCards({subject}) {
     
   }
   useEffect(() => {
+    if(lectures == null){
     fetchLectures();
+    }
  
   }, []);
   // <FormControl tw="">
