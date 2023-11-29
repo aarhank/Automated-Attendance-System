@@ -2,18 +2,13 @@ import { borderRadius } from '@mui/system'
 import React,{useEffect, useState} from 'react'
 import "./index.css"
 import DashboardCards from '../../components/dashboard/DashboardCards';
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import TextField from '@mui/material/TextField';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
-import AttendanceCard from '../../components/dashboard/AttendanceCard';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import { InputLabel } from '@mui/material';
 import { DataGrid,GridToolbar } from '@mui/x-data-grid';
-import axios from 'axios'
+
 const style = {
     position: 'absolute',
     top: '50%',
