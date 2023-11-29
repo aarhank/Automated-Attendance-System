@@ -30,7 +30,7 @@ export default function Login() {
             body: payload,
           };
           
-          fetch("http://localhost:8086/user/authorize", requestOptions)
+          fetch("https://juit-attendance-acd05c65db38.herokuapp.com/user/authorize", requestOptions)
             .then(response => response.text())
             .then(async result => {
               
