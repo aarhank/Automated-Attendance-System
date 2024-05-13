@@ -24,6 +24,7 @@ export default function DashboardCards({subject}) {
   const [lecTeacherEmail,setLecTeacherEmail] = useState();
   const [open,setOpen] = useState(false)
   const createLecture = async () => {
+    setOpen(false);
     const payload = JSON.stringify({
       "lecSubject": data,
       "lecTopic": lecTopic,
@@ -45,7 +46,7 @@ export default function DashboardCards({subject}) {
         
         var final = JSON.parse(result);
         console.log(final);
-        setOpen(false);
+        
         fetchLectures()
       })
       .catch(error => console.log('error', error));
@@ -167,7 +168,7 @@ export default function DashboardCards({subject}) {
         {/* </FormControl> */}
           </div>
           <div className="create-button" onClick={()=> createLecture()} >
-                <p style={{fontWeight:'bold',color:'white',fontSize:"1.3vw"}}>Create Subject</p>
+                <p style={{fontWeight:'bold',color:'white',fontSize:"1.3vw"}}>Create Lecture</p>
             </div>
         </Box>
       </Modal>

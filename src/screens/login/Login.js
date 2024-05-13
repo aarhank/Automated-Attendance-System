@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Login.css'
 import TextField from '@mui/material/TextField';
-import qr from './qr.gif'
 import { useHistory } from 'react-router-dom'
 export default function Login() {
     const [temp, setTemp] = useState("");

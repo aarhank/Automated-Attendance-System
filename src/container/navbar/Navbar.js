@@ -4,13 +4,7 @@ import './index.css'
 export default function Navbar() {
   return (
     <div className="navbar-dashboard">
-          <div style={{width:"100%"}}>
-            <NavIcons/>
-          </div>
-          <div className='nav-icons-center'>
-            <NavIcons/>
-            <NavIcons/>
-            <NavIcons/>
+        <div style={{width:"100%"}}>
             <NavIcons/>
           </div>
     </div>

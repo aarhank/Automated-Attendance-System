@@ -8,6 +8,7 @@ import TextField from '@mui/material/TextField';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import { DataGrid,GridToolbar } from '@mui/x-data-grid';
+import { useHistory } from 'react-router-dom'
 
 const style = {
     position: 'absolute',
@@ -20,6 +21,8 @@ const style = {
     p: 4,
   };
 export default function DashboardContainer() {
+    const history = useHistory();
+    
     const [value, onChange] = useState(new Date());
     
     
@@ -161,6 +164,7 @@ const fetchLectures = (data) => {
       
     };
     const createSubject = async () => {
+      setOpen(false);
       const user = await JSON.parse(localStorage.getItem("credentials"))
       const payload = JSON.stringify({
         "subName": subName,
@@ -185,7 +189,7 @@ const fetchLectures = (data) => {
           
           var final = JSON.parse(result);
           console.log(final);
-          setOpen(false);
+          
           fetchSubjects();
         })
         .catch(error => console.log('error', error));
@@ -209,7 +213,12 @@ const fetchLectures = (data) => {
     }
 
 
-
+    const signOut = () => {
+        localStorage.removeItem('credentials');
+        history.push('/login')
+        window.location.reload();
+    }
+    
 
     const driverColumns = [
       {
@@ -262,19 +271,24 @@ const fetchLectures = (data) => {
       <p style={{fontWeight:'bold',fontSize:'2.5vw'}}>Welcome User </p>
         <div className='dashboard-header'>
         <div className='dashboard-toggle'>
-            <div onClick={() => change("Subject")} style={{width:"50%",height:'100%',backgroundColor:color,borderRadius:'1vw',textAlign:'center',display:'flex',flexDirection:'column',justifyContent:'center'}} >
+            <div onClick={() => change("Subject")} style={{width:"50%",height:'100%',backgroundColor:color,borderRadius:'1vw',textAlign:'center',display:'flex',flexDirection:'column',justifyContent:'center',cursor:'pointer'}} >
                 <p style={{color:color == "#69a5fe" ? "white": "black",fontWeight:'bold',fontSize:"1.3vw"}}>Subjects</p>
             </div>
-            <div onClick={() => change("Attendance")} style={{width:"50%",height:'100%',backgroundColor:color1,borderRadius:'1vw',textAlign:'center',display:'flex',flexDirection:'column',justifyContent:'center'}} >
+            <div onClick={() => change("Attendance")} style={{width:"50%",height:'100%',backgroundColor:color1,borderRadius:'1vw',textAlign:'center',display:'flex',flexDirection:'column',justifyContent:'center',cursor:'pointer'}} >
                 <p style={{color:color1 == "#69a5fe" ? "white": "black",fontWeight:'bold',fontSize:"1.3vw"}}>Attendance</p>
             </div>
         </div>
         {
             option == "Subject" ?
-            
+            <>
             <div className="create-button" onClick={() => setOpen(true)}>
                 <p style={{fontWeight:'bold',color:'white',fontSize:"1.3vw"}}>Create {option}</p>
             </div>
+            <div className="create-button" onClick={() => signOut()}>
+                <p style={{fontWeight:'bold',color:'white',fontSize:"1.3vw"}}>Log Out</p>
+            </div>
+            </>
+            
             
             :
             <>
@@ -341,7 +355,7 @@ const fetchLectures = (data) => {
         {/* </FormControl> */}
           </div>
           <div className="create-button" onClick={()=> createSubject()} >
-                <p style={{fontWeight:'bold',color:'white',fontSize:"1.3vw"}}>Create Subject</p>
+                <p style={{fontWeight:'bold',color:'white',fontSize:"1.3vw",cursor:'pointer'}}>Create Subject</p>
             </div>
         </Box>
       </Modal>
@@ -408,7 +422,7 @@ const fetchLectures = (data) => {
           ))}
         </Select>
         </div>
-        <div onClick={() => setQr()} style={{width:"150px",height:'45px',marginBottom:'0.7vw', backgroundColor:"#69a5fe",borderRadius:'10px',textAlign:'center',display:'flex',flexDirection:'column',justifyContent:'center'}} >
+        <div onClick={() => setQr()} style={{width:"150px",height:'45px',marginBottom:'0.7vw', backgroundColor:"#69a5fe",borderRadius:'10px',textAlign:'center',display:'flex',flexDirection:'column',justifyContent:'center',cursor:'pointer'}} >
                 <p style={{color:"white",fontWeight:'bold'}}>Take Attendance</p>
         </div>
         </div>
@@ -422,18 +436,17 @@ const fetchLectures = (data) => {
             <div className="attendance-body"> 
                 <div style={{display:'flex',flexDirection:'row',gap:'1vw'}}>
                 <h1>Attendance</h1>
-                <div onClick={() => refreshAttendance()} style={{width:"100px",height:'40px',marginBottom:'0.7vw', backgroundColor:"#69a5fe",borderRadius:'10px',textAlign:'center',display:'flex',flexDirection:'column',justifyContent:'center'}} >
+                <div onClick={() => refreshAttendance()} style={{width:"100px",height:'40px',marginBottom:'0.7vw', backgroundColor:"#69a5fe",borderRadius:'10px',textAlign:'center',display:'flex',flexDirection:'column',justifyContent:'center',cursor:'pointer'}} >
                 <p style={{color:"white",fontWeight:'bold'}}>Refresh</p>
                 </div>
                 </div>
-                <div style={{display:'flex',flexDirection:'row',gap:'1vw',flexWrap:'wrap',height:'500px'}}>
-                <Box sx={{ height: 600, width: '100%' }}>
+                <div style={{display:'flex',flexDirection:'row',gap:'1vw',flexWrap:'wrap',height:'500px',overflowY:'scroll'}}>
+                <Box sx={{ height: 500, width: '100%' }}>
                   <DataGrid
                     sx={{border:'none'}}
                     rows={attendance}
                     columns={driverColumns}
-                    pageSize={10}
-                    rowsPerPageOptions={[10]}
+                    hideFooterPagination={true}
                     disableSelectionOnClick
                     // experimentalFeatures={{ newEditingApi: true }}
                     // onSelectionModelChange={(ids) => handleSelect(ids)}
