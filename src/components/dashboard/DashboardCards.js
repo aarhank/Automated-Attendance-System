@@ -39,7 +39,7 @@ export default function DashboardCards({subject}) {
       body: payload,
     };
     
-    fetch("https://juit-attendance-acd05c65db38.herokuapp.com/lecture/create", requestOptions)
+    fetch("https://juit-attendance2-6640b71cefbe.herokuapp.com/lecture/create", requestOptions)
       .then(response => response.text())
       .then(async result => {
         
@@ -59,7 +59,7 @@ export default function DashboardCards({subject}) {
       method: 'GET',
       headers: myHeaders,
     };
-    fetch(`https://juit-attendance-acd05c65db38.herokuapp.com/lecture/subject/${data.id}`, requestOptions)
+    fetch(`https://juit-attendance2-6640b71cefbe.herokuapp.com/lecture/subject/${data.id}`, requestOptions)
       .then(response => response.text())
       .then(async result => {
         

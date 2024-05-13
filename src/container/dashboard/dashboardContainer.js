@@ -75,7 +75,6 @@ myHeaders.append("Content-Type", "application/json");
 var raw = JSON.stringify({
 "id": lecture
 });
-
 var requestOptions = {
 method: 'POST',
 headers: myHeaders,
@@ -83,7 +82,7 @@ body: raw,
 redirect: 'follow'
 };
 
-fetch("https://juit-attendance-acd05c65db38.herokuapp.com/lecture/generateTokens", requestOptions)
+fetch("https://juit-attendance2-6640b71cefbe.herokuapp.com/lecture/generateTokens", requestOptions)
 .then(response => response.text())
 .then(async result => {
 
@@ -106,7 +105,7 @@ const refreshAttendance = () => {
     method: 'GET',
     headers: myHeaders,
   };
-  fetch(`https://juit-attendance-acd05c65db38.herokuapp.com/attendance/lecture/${lecture}`, requestOptions)
+  fetch(`https://juit-attendance2-6640b71cefbe.herokuapp.com/attendance/lecture/${lecture}`, requestOptions)
     .then(response => response.text())
     .then(async result => {
       
@@ -123,7 +122,7 @@ const fetchLectures = (data) => {
     method: 'GET',
     headers: myHeaders,
   };
-  fetch(`https://juit-attendance-acd05c65db38.herokuapp.com/lecture/subject/${data}`, requestOptions)
+  fetch(`https://juit-attendance2-6640b71cefbe.herokuapp.com/lecture/subject/${data}`, requestOptions)
     .then(response => response.text())
     .then(async result => {
       
@@ -144,7 +143,7 @@ const fetchLectures = (data) => {
         headers: myHeaders,
       };
            
-      fetch(`https://juit-attendance-acd05c65db38.herokuapp.com/subject/teacher/${user.email}`, requestOptions)
+      fetch(`https://juit-attendance2-6640b71cefbe.herokuapp.com/subject/teacher/${user.email}`, requestOptions)
         .then(response => response.text())
         .then(async result => {
           
@@ -180,7 +179,7 @@ const fetchLectures = (data) => {
         body: payload,
       };
       
-      fetch("https://juit-attendance-acd05c65db38.herokuapp.com/subject/create", requestOptions)
+      fetch("https://juit-attendance2-6640b71cefbe.herokuapp.com/subject/create", requestOptions)
         .then(response => response.text())
         .then(async result => {
           
@@ -300,11 +299,11 @@ const fetchLectures = (data) => {
       
         </div>
         <Modal
-        open={open}
-        onClose={()=>{setOpen(false)}}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
+          open={open}
+          onClose={()=>{setOpen(false)}}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
         
         <Box sx={style}>
           <h2>Add Subject</h2>
@@ -367,7 +366,7 @@ const fetchLectures = (data) => {
         <Select
             labelId="demo-multiple-name-label"
             id="demo-multiple-name"
-          
+
             value={subject}
   
             onChange={handleChange}

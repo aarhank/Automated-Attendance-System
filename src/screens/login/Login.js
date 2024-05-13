@@ -32,7 +32,7 @@ export default function Login() {
             body: payload,
           };
           
-          fetch("https://juit-attendance-acd05c65db38.herokuapp.com/user/authorize", requestOptions)
+          fetch("https://juit-attendance2-6640b71cefbe.herokuapp.com/user/authorize", requestOptions)
             .then(response => response.text())
             .then(async result => {
               
